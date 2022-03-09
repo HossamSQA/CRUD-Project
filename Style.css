@@ -1,0 +1,65 @@
+body {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    background-image: url("./imgs/background-light.jpg");
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+/* Start Navbar */
+
+.navbar {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+@media (max-width: 575.98px) {
+    .navbar form {
+        display: block !important;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .navbar form {
+        display: block !important;
+    }
+}
+
+
+/* End Nabbar */
+
+input :not(.search-in),
+button {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: all 0.5s ease !important;
+}
+
+button:hover {
+    transform: scale(1.1) !important;
+    background-color: white !important;
+    color: black !important;
+}
+
+
+/* Start Input */
+
+.input-section h2 {
+    margin-top: 7rem !important;
+}
+
+@media (max-width: 575.98px) {
+    .input-section h2 {
+        margin-top: 11rem !important;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .input-section h2 {
+        margin-top: 11rem !important;
+    }
+}
+
+
+/* End Input */
