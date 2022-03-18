@@ -36,10 +36,10 @@
                     <div class="collapse navbar-collapse justify-content-end " id="navbarSupportedContent">
 
                         <form class=" ps-4 pe-4 ms-4 me-4 col-10 text-center justify-content-center align-items-center d-flex">
-                            <input class="form-control me-4 fs-6 w-100 mt-1 mb-1 search-in" type="search" placeholder="Search By ..." aria-label="Search">
+                            <input onkeyup="searchData(this.value)" class="form-control me-4 fs-6 w-100 mt-1 mb-1 search-in" type="search" placeholder="Search By ..." aria-label="Search" id="search">
                             <div class="search-btn mt-1 mb-1 d-flex">
-                                <button class="btn btn-primary fs-6 me-3" type="submit">Category</button>
-                                <button class="btn btn-primary fs-6" type="submit">Title</button>
+                                <button onclick="getSearchMood(this.id)" class="btn btn-primary fs-6 me-3" id="searchTitle">Title</button>
+                                <button onclick="getSearchMood(this.id)" class="btn btn-primary fs-6" id="searchCategory">Category</button>
                             </div>
                         </form>
                     </div>
@@ -61,20 +61,20 @@
 
                 <div class="d-flex gap-3">
                     <div class="input-group mb-3">
-                        <input type="number" class="form-control mt-2" placeholder="Price" aria-label="Price" id="price">
+                        <input onkeyup="getTotal()" type="number" class="form-control mt-2" placeholder="Price" aria-label="Price" id="price">
                     </div>
                     <div class="input-group mb-3">
-                        <input type="number" class="form-control mt-2" placeholder="Taxes" aria-label="Taxes" id="Taxes">
+                        <input onkeyup="getTotal()" type="number" class="form-control mt-2" placeholder="Taxes" aria-label="Taxes" id="taxes">
                     </div>
                     <div class="input-group mb-3">
-                        <input type="number" class="form-control mt-2" placeholder="Ads" aria-label="Ads" id="ads">
+                        <input onkeyup="getTotal()" type="number" class="form-control mt-2" placeholder="Ads" aria-label="Ads" id="ads">
                     </div>
                     <div class="input-group mb-3">
-                        <input type="number" class="form-control mt-2" placeholder="Discount" aria-label="Discount" id="discount">
+                        <input onkeyup="getTotal()" type="number" class="form-control mt-2" placeholder="Discount" aria-label="Discount" id="discount">
                     </div>
                     <div class="input-group mb-3">
                         <label class="input-group-text mt-2 bg-dark text-light" for="total">Total:</label>
-                        <input type="text" class="form-control mt-2" placeholder="Total" aria-label="Total" aria-describedby="basic-addon1" id="total" readonly>
+                        <input type="number" class="form-control mt-2" placeholder="Total" aria-label="Total" id="total" readonly>
                     </div>
                 </div>
 
@@ -86,7 +86,10 @@
                     <input type="text" class="form-control mt-2" placeholder="Category" aria-label="Category" id="category">
                 </div>
 
-                <button type="button" class="btn btn-primary rounded text-center mx-auto w-75 mt-2" id="add">Add Product</button>
+                <div>
+                    <button type="button" class="btn btn-primary rounded w-75 mb-3" id="add">Add Product</button>
+                    <button onclick="deleteAllProduct()" type="button" id="delete-all">Delete All</button>
+                </div>
             </div>
         </div>
     </section>
@@ -110,23 +113,8 @@
                         <th scope="col">Delete</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Samsung S22</td>
-                        <td>200</td>
-                        <td>14</td>
-                        <td>10</td>
-                        <td>10</td>
-                        <td>250</td>
-                        <td>Phone</td>
-                        <td>
-                            <button type="button" class="btn btn-primary rounded-pill text-center mx-auto" id="update">Update</button>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-danger rounded-pill text-center mx-auto" id="delete">Delete</button>
-                        </td>
-                    </tr>
+                <tbody id="tbody">
+                    <!-- data will be created with JS -->
                 </tbody>
             </table>
         </div>
